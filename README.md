@@ -1,2 +1,3 @@
 # sea battle
- sea battle written in java
+
+written in java
