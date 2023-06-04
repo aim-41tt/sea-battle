@@ -1,0 +1,22 @@
+	 btnexit=new JButton();
+	 btnexit.setForeground(Color.RED);
+	 btnexit.setFont(new Font("serif",0,30));
+	 btnexit.setText("boom");
+	 btnexit.setBounds(380, 450, 120, 30);
+	 btnexit.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			myGame.boom();
+		}
+	});
+	add(btnexit);
+	  public void boom() {  if(endg!=1) bom1=true;  }
+	  boomboom= ImageIO.read(new File("png/boom1.png"));
+	  
+	  
+	  if(myGame.bom1==true) {
+				gr.drawImage(boomboom,0,0,900,600,null);
+				
+					gr.drawImage(end1, 300, 200, 300, 100, null);
+				}

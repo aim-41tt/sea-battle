@@ -186,7 +186,7 @@ okrend(mas);
 	  private void victori(){
 		 final int testnumber =330;
 		  int colbot = 0;
-		  int colpleayr=0;
+		  int colpleayr = 0;
 		  
 		  for(int i=0; i<10;i++){
 			for(int j=0;j<10;j++){
@@ -303,8 +303,8 @@ okrend(mas);
 	    	  
 	      if(flag==false){
 	    	m2: 
-	    		for(int i=0;i<=10;i++){
-	    		  for(int j=0;j<=10;j++){
+	    		for(int i=0;i<10;i++){
+	    		  for(int j=0;j<10;j++){
 	    			  
 	    			  if(masplay[i][j]<=4 && masplay[i][j]!=-2){
 
@@ -357,7 +357,7 @@ okrend(mas);
 		    	 }
 		      }
 		      
-		      public void boom() {  if(endg!=1) bom1=true;  }
+		    
 		      
           }
 	  

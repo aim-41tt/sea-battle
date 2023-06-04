@@ -23,9 +23,9 @@ import javax.swing.Timer;
 
 
 public class pole extends JPanel {
-	//pole
-		private Image fon,paluba,ranen,ubit,bomba,end1,end2,boomboom;
-		private JButton btnexit,btnnewgame;
+	
+		private Image fon,paluba,ranen,ubit,bomba,end1,end2;
+		private JButton btn_exit,btn_New_game;
 		private Timer tmdraw;
 		private game myGame;
 		
@@ -90,7 +90,7 @@ public class pole extends JPanel {
 			my=e.getY();
 			
 				if(mx>100 && mx<400 && my>100 && my<400){
-					setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
+					setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR)); 
 			}
 				else{
 					setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
@@ -106,16 +106,17 @@ public class pole extends JPanel {
 			myGame.start();
 			
 			try{
-			boomboom= ImageIO.read(new File("boom1.png"));
-			fon= ImageIO.read(new File("fon.png"));
-			paluba= ImageIO.read(new File("paluba.png"));
-			ranen= ImageIO.read(new File("ranen.png"));
-			ubit= ImageIO.read(new File("ubit.png"));
-			bomba= ImageIO.read(new File("bomba.png"));
-			end1= ImageIO.read(new File("end1.png"));
-			end2= ImageIO.read(new File("end2.png"));
+			
+			fon= ImageIO.read(new File("png/fon.png"));
+			paluba= ImageIO.read(new File("png/paluba.png"));
+			ranen= ImageIO.read(new File("png/ranen.png"));
+			ubit= ImageIO.read(new File("png/ubit.png"));
+			bomba= ImageIO.read(new File("png/bomba.png"));
+			end1= ImageIO.read(new File("png/end1.png"));
+			end2= ImageIO.read(new File("png/end2.png"));
 			} catch (Exception e) {
-		JOptionPane.showMessageDialog(null,"lol");
+		JOptionPane.showMessageDialog(null,"error_png");
+		System.exit(0);
 		}	
 
 		
@@ -129,12 +130,12 @@ public class pole extends JPanel {
 	 
 	 setLayout(null);
 	 
-	 btnexit=new JButton();
-	 btnexit.setForeground(Color.blue);
-	 btnexit.setFont(new Font("serif",0,30));
-	 btnexit.setText("next");
-	 btnexit.setBounds(530, 450, 200, 80);
-	 btnexit.addActionListener(new ActionListener() {
+	 btn_exit=new JButton();
+	 btn_exit.setForeground(Color.blue);
+	 btn_exit.setFont(new Font("serif",0,30));
+	 btn_exit.setText("next");
+	 btn_exit.setBounds(530, 450, 200, 80);
+	 btn_exit.addActionListener(new ActionListener() {
 		 
 		
 		@Override
@@ -143,39 +144,25 @@ public class pole extends JPanel {
 			System.exit(0);
 		}
 	});
-	 add(btnexit);
+	 add(btn_exit);
 	 
 	 
-	 btnexit=new JButton();
-	 btnexit.setForeground(Color.RED);
-	 btnexit.setFont(new Font("serif",0,30));
-	 btnexit.setText("new game");
-	 btnexit.setBounds(130, 450, 200, 80);
-	 btnexit.addActionListener(new ActionListener() {
+	 btn_New_game=new JButton();
+	 btn_New_game.setForeground(Color.RED);
+	 btn_New_game.setFont(new Font("serif",0,30));
+	 btn_New_game.setText("new game");
+	 btn_New_game.setBounds(130, 450, 200, 80);
+	 btn_New_game.addActionListener(new ActionListener() {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			myGame.start();
 		}
 	});
-	add(btnexit);
+	add(btn_New_game);
 	 
-	 btnexit=new JButton();
-	 btnexit.setForeground(Color.RED);
-	 btnexit.setFont(new Font("serif",0,30));
-	 btnexit.setText("boom");
-	 btnexit.setBounds(380, 450, 120, 30);
-	 btnexit.addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			myGame.boom();
-		}
-	});
-	add(btnexit);
 
-		}
-		
+		}	
 		
 		public void paintComponent(Graphics gr){
 
@@ -268,15 +255,8 @@ public class pole extends JPanel {
 				
 			}
 			
-			if(myGame.bom1==true) {
-				gr.drawImage(boomboom,0,0,900,600,null);
-				if (myGame.bom1==true) {
-					gr.drawImage(end1, 300, 200, 300, 100, null);
-				}
-			}
 			
-		}
-
-		
-		
+			
+			
+		}		
 }
